@@ -4,15 +4,16 @@ import org.hbrs.se1.ws24.exercises.uebung2.Container.Container;
 import org.hbrs.se1.ws24.exercises.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws24.exercises.uebung2.Member.ConcreteMember;
 import org.hbrs.se1.ws24.exercises.uebung2.Member.Member;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ueb2Test {
 
     private Container container;
 
+    @BeforeEach
     public void setup(){
         container = new Container();
     }
@@ -39,10 +40,12 @@ class ueb2Test {
 
     }
     @Test
-    void nullTest() throws ContainerException {
+    void nullTest() {
         Member member1 = new ConcreteMember();
-        assertEquals("Member is null" , container.addMember(null));
+        assertThrows(ContainerException.class, () -> {container.addMember(null);
+        });
         assertEquals(0,container.size());
+
     }
 
 }

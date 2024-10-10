@@ -27,7 +27,7 @@ public class Container {
     }
 
     public void addMember(Member member) throws ContainerException{
-        if(member.equals(null)) {
+        if(member == null) {
             throw new ContainerException("Member is null");
         }
             if (!container.isEmpty()) {
