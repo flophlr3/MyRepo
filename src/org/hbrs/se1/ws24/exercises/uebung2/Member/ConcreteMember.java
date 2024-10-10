@@ -11,6 +11,10 @@ public class ConcreteMember implements Member {
         this.id = ++counter;
     }
 
+    public static void resetCounter() {
+        counter = 0;
+    }
+
 
     @Override
     public Integer getID() {

@@ -12,9 +12,7 @@ public class Container {
     private ArrayList<Member> container;
 
     public Container(){
-
         this.container = new ArrayList<>();
-
     }
 
     private void enthaelt(int id) throws ContainerException {
@@ -23,7 +21,6 @@ public class Container {
                 throw new ContainerException("Das Member-Objekt mit der ID" + id + " ist bereits vorhanden!");
             }
         }
-
     }
 
     public void addMember(Member member) throws ContainerException{
@@ -34,22 +31,18 @@ public class Container {
                 enthaelt(member.getID());
             }
             container.add(member);
-
-
     }
 
     public String deleteMember(int id) {
         if (container.isEmpty()) {
             return "Container ist leer";
         }
-
         for (Member member : container) {
-            if (member.getID() == id) { // Vergleich mit == statt equals
+            if (member.getID() == id) {
                 container.remove(member);
-                return "Member [" + member.getID() + "] wurde gelöscht"; // Hier die ID zurückgeben
+                return "Member [" + member.getID() + "] wurde gelöscht";
             }
         }
-
         return "Member mit der ID [" + id + "] wurde nicht gefunden";
     }
 
