@@ -168,7 +168,7 @@
       <workItem from="1727176958305" duration="1892000" />
       <workItem from="1728565348619" duration="205000" />
       <workItem from="1728565567999" duration="27000" />
-      <workItem from="1728565660266" duration="2857000" />
+      <workItem from="1728565660266" duration="3120000" />
     </task>
     <task id="LOCAL-00001" summary="comm">
       <option name="closed" value="true" />
@@ -226,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728567453875</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="deletemembers dump test">
+      <option name="closed" value="true" />
+      <created>1728568616726</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728568616726</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

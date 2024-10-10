@@ -13,6 +13,7 @@ import java.io.PrintStream;
 
 class ueb2Test {
 
+    // für den Prinstream Test
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
@@ -21,9 +22,6 @@ class ueb2Test {
     @BeforeEach
     public void setup(){
         container = new Container();
-
-
-
     }
 
     @Test
@@ -48,6 +46,7 @@ class ueb2Test {
 
     @Test
     void nullTest() {
+        // "null" Member hinzufügen
         assertThrows(   ContainerException.class, () -> {   container.addMember(null);  }   );
         assertEquals(0,container.size());
 
@@ -56,14 +55,14 @@ class ueb2Test {
 
     @Test
     void deleteMembers() throws ContainerException {
-        // Mitglieder erstellen
+        // Member erstellen
         Member member1 = new ConcreteMember();
         Member member2 = new ConcreteMember();
         Member member3 = new ConcreteMember();
         Member member4 = new ConcreteMember();
         Member member5 = new ConcreteMember();
 
-        // Mitglieder hinzufügen
+        // Member hinzufügen
         container.addMember(member1);
         container.addMember(member2);
         container.addMember(member3);
@@ -75,7 +74,7 @@ class ueb2Test {
         container.dump();
         assertEquals("1, 2, 3, 4, 5,", outputStreamCaptor.toString().trim());
 
-        // Mitglied löschen
+        // Member löschen
         container.deleteMember(3);
 
         outputStreamCaptor.reset(); //Stream zurückzusetzen
@@ -85,5 +84,6 @@ class ueb2Test {
         container.dump();
         assertEquals("1, 2, 4, 5,", outputStreamCaptor.toString().trim());
     }
+
 
 }
