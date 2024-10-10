@@ -86,6 +86,12 @@ class ueb2Test {
         assertEquals("1, 2, 4, 5,", outputStreamCaptor.toString().trim());
     }
 
+    @Test
+    void doppeltHinzufuegen() throws ContainerException{
+        Member member1 = new ConcreteMember();
+
+
+    }
 
 }
 
