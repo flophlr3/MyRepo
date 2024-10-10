@@ -52,7 +52,9 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.org.hbrs.se1.ws24.exercises.uebung2.test in SE_1.executor": "Run",
+    "JUnit.ueb2Test.addMembers.executor": "Run",
     "JUnit.ueb2Test.deleteMembers.executor": "Run",
+    "JUnit.ueb2Test.executor": "Run",
     "JUnit.ueb2Test.nullTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -68,7 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,7 +83,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ueb2Test.deleteMembers">
+  <component name="RunManager" selected="JUnit.ueb2Test">
     <configuration name="org.hbrs.se1.ws24.exercises.uebung2.test in SE_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SE_1" />
       <extension name="coverage">
@@ -92,6 +94,37 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ueb2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SE_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung2.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test.ueb2Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ueb2Test.addMembers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SE_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung2.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test.ueb2Test" />
+      <option name="METHOD_NAME" value="addMembers" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,23 +161,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="SE_1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="SE_1" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ueb2Test.deleteMembers" />
+        <item itemvalue="JUnit.ueb2Test" />
+        <item itemvalue="JUnit.ueb2Test.addMembers" />
         <item itemvalue="JUnit.ueb2Test.nullTest" />
+        <item itemvalue="JUnit.ueb2Test.deleteMembers" />
         <item itemvalue="JUnit.org.hbrs.se1.ws24.exercises.uebung2.test in SE_1" />
       </list>
     </recent_temporary>
@@ -168,7 +190,8 @@
       <workItem from="1727176958305" duration="1892000" />
       <workItem from="1728565348619" duration="205000" />
       <workItem from="1728565567999" duration="27000" />
-      <workItem from="1728565660266" duration="3120000" />
+      <workItem from="1728565660266" duration="3711000" />
+      <workItem from="1728569385596" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="comm">
       <option name="closed" value="true" />
@@ -234,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728568616726</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="deletemembers dump test">
+      <option name="closed" value="true" />
+      <created>1728568894263</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728568894263</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

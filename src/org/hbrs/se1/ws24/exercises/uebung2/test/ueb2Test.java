@@ -22,6 +22,8 @@ class ueb2Test {
     @BeforeEach
     public void setup(){
         container = new Container();
+        ConcreteMember.resetCounter();
+
     }
 
     @Test
@@ -34,7 +36,6 @@ class ueb2Test {
         Member member5 = new ConcreteMember();
 
         assertEquals(0, container.size());
-        container.addMember(null);
         container.addMember(member1);
         assertEquals(1, container.size());
         container.addMember(member2);
@@ -42,6 +43,7 @@ class ueb2Test {
         container.addMember(member4);
         container.addMember(member5);
         assertEquals(5, container.size());
+
     }
 
     @Test
@@ -55,13 +57,12 @@ class ueb2Test {
 
     @Test
     void deleteMembers() throws ContainerException {
-        // Member erstellen
+
         Member member1 = new ConcreteMember();
         Member member2 = new ConcreteMember();
         Member member3 = new ConcreteMember();
         Member member4 = new ConcreteMember();
         Member member5 = new ConcreteMember();
-
         // Member hinzufügen
         container.addMember(member1);
         container.addMember(member2);
@@ -87,3 +88,4 @@ class ueb2Test {
 
 
 }
+
