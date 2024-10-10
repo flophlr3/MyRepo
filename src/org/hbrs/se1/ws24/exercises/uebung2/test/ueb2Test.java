@@ -8,18 +8,27 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 class ueb2Test {
+
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
 
     private Container container;
 
     @BeforeEach
     public void setup(){
         container = new Container();
+
+
+
     }
 
     @Test
-    void test1() throws ContainerException {
+    void addMembers() throws ContainerException {
+
         Member member1 = new ConcreteMember();
         Member member2 = new ConcreteMember();
         Member member3 = new ConcreteMember();
@@ -35,18 +44,46 @@ class ueb2Test {
         container.addMember(member4);
         container.addMember(member5);
         assertEquals(5, container.size());
-        container.dump();
-
-
     }
+
     @Test
     void nullTest() {
-        Member member1 = new ConcreteMember();
-        assertThrows(ContainerException.class, () -> {container.addMember(null);
-        });
+        assertThrows(   ContainerException.class, () -> {   container.addMember(null);  }   );
         assertEquals(0,container.size());
 
 
+    }
+
+    @Test
+    void deleteMembers() throws ContainerException {
+        // Mitglieder erstellen
+        Member member1 = new ConcreteMember();
+        Member member2 = new ConcreteMember();
+        Member member3 = new ConcreteMember();
+        Member member4 = new ConcreteMember();
+        Member member5 = new ConcreteMember();
+
+        // Mitglieder hinzufügen
+        container.addMember(member1);
+        container.addMember(member2);
+        container.addMember(member3);
+        container.addMember(member4);
+        container.addMember(member5);
+
+        // Ausgabe für den ersten Dump
+        System.setOut(new PrintStream(outputStreamCaptor));
+        container.dump();
+        assertEquals("1, 2, 3, 4, 5,", outputStreamCaptor.toString().trim());
+
+        // Mitglied löschen
+        container.deleteMember(3);
+
+        outputStreamCaptor.reset(); //Stream zurückzusetzen
+
+        // Ausgabe für den zweiten Dump
+        System.setOut(new PrintStream(outputStreamCaptor));
+        container.dump();
+        assertEquals("1, 2, 4, 5,", outputStreamCaptor.toString().trim());
     }
 
 }
