@@ -44,9 +44,9 @@ public class Container {
         }
 
         for (Member member : container) {
-            if (member.getID() == id) {
+            if (member.getID() == id) { // Vergleich mit == statt equals
                 container.remove(member);
-                return "Member [" + member.getID() + "] wurde gelöscht";
+                return "Member [" + member.getID() + "] wurde gelöscht"; // Hier die ID zurückgeben
             }
         }
 
