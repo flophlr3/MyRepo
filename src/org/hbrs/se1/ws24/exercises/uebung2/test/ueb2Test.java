@@ -5,14 +5,14 @@ import org.hbrs.se1.ws24.exercises.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws24.exercises.uebung2.Member.ConcreteMember;
 import org.hbrs.se1.ws24.exercises.uebung2.Member.Member;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ueb2Test {
 
     private Container container;
 
-    @BeforeEach
     public void setup(){
         container = new Container();
     }
