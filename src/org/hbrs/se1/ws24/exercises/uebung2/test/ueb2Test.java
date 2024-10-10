@@ -27,7 +27,7 @@ class ueb2Test {
     }
 
     @Test
-    void addMembers() throws ContainerException {
+    void addAndDeleteMembers() throws ContainerException {
 
         Member member1 = new ConcreteMember();
         Member member2 = new ConcreteMember();
@@ -39,11 +39,22 @@ class ueb2Test {
         container.addMember(member1);
         assertEquals(1, container.size());
         container.addMember(member2);
+        assertEquals(2, container.size());
         container.addMember(member3);
+        assertEquals(3, container.size());
         container.addMember(member4);
+        assertEquals(4, container.size());
         container.addMember(member5);
         assertEquals(5, container.size());
 
+        container.deleteMember(5);
+        assertEquals(4, container.size());
+        container.deleteMember(4);
+        assertEquals(3, container.size());
+        container.deleteMember(3);
+        assertEquals(2, container.size());
+        container.deleteMember(2);
+        assertEquals(1, container.size());
     }
 
     @Test
@@ -89,10 +100,12 @@ class ueb2Test {
     @Test
     void doppeltHinzufuegen() throws ContainerException{
         Member member1 = new ConcreteMember();
-
-
+        container.addMember(member1);
+        assertThrows(   ContainerException.class, () -> {   container.addMember(member1);  }   );
 
     }
+
+
 
 }
 
