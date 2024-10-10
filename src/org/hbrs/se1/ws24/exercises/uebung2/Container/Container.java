@@ -37,22 +37,31 @@ public class Container {
 
 
     }
-    
-    public String deleteMember(int id){
-        for(Member member : container) {
-            if(member.getID().equals(id)){
-                container.remove(member);
-                return "Member [" + member + "] wurde gelöscht";
-            }
-            return "Member mit der id ["+ id +"] wurde nicht gefunden";
+
+    public String deleteMember(int id) {
+        if (container.isEmpty()) {
+            return "Container ist leer";
         }
-        return "Container ist leer";
+
+        for (Member member : container) {
+            if (member.getID() == id) {
+                container.remove(member);
+                return "Member [" + member.getID() + "] wurde gelöscht";
+            }
+        }
+
+        return "Member mit der ID [" + id + "] wurde nicht gefunden";
     }
 
-    public void dump(){
-        for (Member member : container ){
-            System.out.print(member.getID() + ", ");
+    public void dump() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < container.size(); i++) {
+            sb.append(container.get(i).getID());
+            if (i < container.size() - 1) {
+                sb.append(", ");
+            }
         }
+        System.out.print(sb.toString() + ","); // Komma am Ende der Ausgabe hinzufügen
     }
 
     public int size(){
