@@ -18,6 +18,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -187,7 +200,7 @@
       <workItem from="1728565348619" duration="205000" />
       <workItem from="1728565567999" duration="27000" />
       <workItem from="1728565660266" duration="3711000" />
-      <workItem from="1728569385596" duration="2909000" />
+      <workItem from="1728569385596" duration="4025000" />
     </task>
     <task id="LOCAL-00001" summary="comm">
       <option name="closed" value="true" />
@@ -301,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728636729713</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="new test">
+      <option name="closed" value="true" />
+      <created>1728637208964</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728637208964</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
