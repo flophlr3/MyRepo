@@ -10,7 +10,7 @@ public class PersistenceException extends Exception {
 
     public PersistenceException( ExceptionType exceptionType, String message) {
         super(message);
-        this.exceptionTyp e = exceptionType;
+        this.exceptionType = exceptionType;
     }
 
     /**
