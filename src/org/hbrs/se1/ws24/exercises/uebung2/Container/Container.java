@@ -4,15 +4,22 @@ import org.hbrs.se1.ws24.exercises.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws24.exercises.uebung2.Member.Member;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 public class Container {
 
-    private ArrayList<Member> container;
+    private static ArrayList<Member> container;
 
-    public Container(){
-        this.container = new ArrayList<>();
+    public Container() {
+        container = new ArrayList<>();
+    }
+
+    public static List<Member> getInstance() {
+        if (container == null) {
+            container = new ArrayList<>();
+        }
+        return container;
     }
 
     private void enthaelt(int id) throws ContainerException {
