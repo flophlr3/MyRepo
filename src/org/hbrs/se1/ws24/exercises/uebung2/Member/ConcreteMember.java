@@ -7,7 +7,7 @@ public class ConcreteMember implements Member {
     private int id;
 
 
-    public ConcreteMember(){
+    public ConcreteMember(int i){
         this.id = ++counter;
     }
 
