@@ -21,7 +21,7 @@ class ueb2Test {
 
     @BeforeEach
     public void setup(){
-        container = new Container();
+        container = Container.getInstance();
         ConcreteMember.resetCounter();
 
     }
@@ -83,7 +83,7 @@ class ueb2Test {
 
         // Ausgabe für den ersten Dump
         System.setOut(new PrintStream(outputStreamCaptor));
-        container.dump();
+        container.getCurrentList();
         assertEquals("1, 2, 3, 4, 5,", outputStreamCaptor.toString().trim());
 
         // Member löschen
@@ -93,7 +93,7 @@ class ueb2Test {
 
         // Ausgabe für den zweiten Dump
         System.setOut(new PrintStream(outputStreamCaptor));
-        container.dump();
+        container.getCurrentList();
         assertEquals("1, 2, 4, 5,", outputStreamCaptor.toString().trim());
     }
 
