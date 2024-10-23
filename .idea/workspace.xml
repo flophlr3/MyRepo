@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11b931b2-f8a2-4546-af99-1df1f0f211cc" name="Changes" comment="ueb3">
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung3/persistence/MemberView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung3/persistence/PersistenceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung3/persistence/PersistenceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung3/persistence/PersistenceStrategyStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung3/persistence/PersistenceStrategyStream.java" afterDir="false" />
+    <list default="true" id="11b931b2-f8a2-4546-af99-1df1f0f211cc" name="Changes" comment="ueb3_fertig">
+      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung2/test/ueb2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung2/test/ueb2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +210,7 @@
       <workItem from="1729079575395" duration="9036000" />
       <workItem from="1729447631751" duration="3836000" />
       <workItem from="1729589281686" duration="39000" />
-      <workItem from="1729590009165" duration="1291000" />
+      <workItem from="1729590009165" duration="1693000" />
     </task>
     <task id="LOCAL-00001" summary="comm">
       <option name="closed" value="true" />
@@ -374,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729683588696</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ueb3_fertig">
+      <option name="closed" value="true" />
+      <created>1729684141954</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1729684141954</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +404,8 @@
     <MESSAGE value="new test" />
     <MESSAGE value="comm" />
     <MESSAGE value="ueb3" />
-    <option name="LAST_COMMIT_MESSAGE" value="ueb3" />
+    <MESSAGE value="ueb3_fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="ueb3_fertig" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
