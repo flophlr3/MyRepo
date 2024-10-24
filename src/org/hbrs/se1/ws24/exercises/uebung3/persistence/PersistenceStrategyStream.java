@@ -1,7 +1,5 @@
 package org.hbrs.se1.ws24.exercises.uebung3.persistence;
 
-import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceException;
-
 import java.io.*;
 import java.util.List;
 

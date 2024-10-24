@@ -1,15 +1,18 @@
 package org.hbrs.se1.ws24.exercises.uebung3;
 
-import org.hbrs.se1.ws24.exercises.uebung2.Container.Container;
 import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceStrategyStream;
 
 public class Main {
+
     public static void main(String[] args) {
+        // Referenz auf das Container-Objekt holen
         Container container = Container.getInstance();
 
-        container.setStrategy(new PersistenceStrategyStream<>());
+        // Strategie für Stream-Strategy erzeugen und in den Container einsetzen
+        container.setPersistenceStrategie( new PersistenceStrategyStream() );
 
+        // Client zur Ein- und Ausgabe starten
         Client client = new Client();
-        client.start();
+        client.startClient();
     }
 }
