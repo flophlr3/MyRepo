@@ -47,6 +47,7 @@ public class PersistenceStrategyStream<E> implements PersistenceStrategy<E> {
         }
     }
 
+
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     /**
