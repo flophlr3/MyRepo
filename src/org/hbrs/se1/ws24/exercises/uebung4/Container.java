@@ -19,10 +19,10 @@ import java.util.List;
 public class Container {
 
 	// Interne ArrayList zur Abspeicherung der Objekte
-	private List<Member> liste = null;
+	private List<UserStories> liste = null;
 
-	// Statische Klassen-Variable, um die Referenz
-	// auf das einzige Container-Objekt abzuspeichern
+	//Statische Klassen-Variable, um die Referenz
+	//auf das einzige Container-Objekt abzuspeichern
 	// Dynamische Belegung: nur falls Methode getInstance geladen
 	// wird, dann wird nach Bedarf die Variable mit einer Referenz gefüllt
 	private static Container instance = null; // = new Container();
@@ -30,8 +30,10 @@ public class Container {
 	// Reference to the internal strategy (e.g. MongoDB or Stream)
 	private PersistenceStrategy strategy = null;
 
+	// Flag to see, if a connection is opened
+	private boolean connectionOpen = false;
 
-	/**
+	/*
 	 * Statische Methode um die einzige Instanz der Klasse
 	 * Container zu bekommen. Das Keyword synchronized bewirkt,
 	 * dass garantiert nur ein Objekt den alleinigen Zugriff
@@ -55,7 +57,9 @@ public class Container {
 		// instance = new Container();
 	}
 
-	/**
+
+
+	/*
 	 * Ueberschreiben des Konstruktors. Durch die Sichtbarkeit private
 	 * kann man von aussen die Klasse nicht mehr instanziieren,
 	 * sondern nur noch kontrolliert ueber die statische Methode
@@ -63,7 +67,7 @@ public class Container {
 	 */
 	private Container(){
 		System.out.println("Container ist instanziiert (Konstruktor)!");
-		this.liste = new ArrayList<Member>();
+		this.liste = new ArrayList<UserStories>();
 	}
 
 
@@ -80,7 +84,7 @@ public class Container {
 	 * @param r
 	 * @throws ContainerException
 	 */
-	public void addMember ( Member r ) throws ContainerException {
+	public void addUserStory ( UserStories r ) throws ContainerException {
 		if ( contains( r ) == true ) {
 			System.out.println("Duplikat: " + r.toString() );
 			ContainerException ex = new ContainerException( ContainerException.ExceptionType.DuplicateMember );
@@ -94,9 +98,9 @@ public class Container {
 	 * Methode zur Ueberpruefung, ob ein Member-Objekt in der Liste enthalten ist
 	 *
 	 */
-	private boolean contains( Member r) {
+	private boolean contains( UserStories r) {
 		Integer ID = r.getID();
-		for ( Member rec : liste) {
+		for ( UserStories rec : liste) {
 			if ( rec.getID() == ID ) {
 				return true;
 			}
@@ -109,14 +113,14 @@ public class Container {
 	 *
 	 */
 	public String deleteMember(Integer id ) {
-		Member rec = getMember( id );
+		UserStories rec = getUserStory( id );
 		if (rec == null) return "Member nicht enthalten - ERROR"; else {
 			liste.remove(rec);
 			return "Member mit der ID " + id + " konnte geloescht werden";
 		}
 	}
 
-	/**
+	/*
 	 * Method for getting the number of currently stored objects
 	 *
 	 */
@@ -125,12 +129,12 @@ public class Container {
 	}
 
 
-	/**
+	/*
 	 * Interne Methode zur Ermittlung eines Member
 	 *
 	 */
-	private Member getMember(Integer id) {
-		for ( Member rec : liste) {
+	private UserStories getUserStory(Integer id) {
+		for ( UserStories rec : liste) {
 			if (id == rec.getID().intValue() ){
 				return rec;
 			}
@@ -145,26 +149,34 @@ public class Container {
 	 */
 	public void load() throws PersistenceException {
 		if (this.strategy == null)
-			throw new PersistenceException(
-					PersistenceException.ExceptionType.NoStrategyIsSet,
+			throw new PersistenceException( PersistenceException.ExceptionType.NoStrategyIsSet,
 					"Strategy not initialized");
 
-		try {
-			List<Member> liste = this.strategy.load();
-			this.liste = liste;
-		} catch ( UnsupportedOperationException e) {
-			throw new PersistenceException(
-					PersistenceException.ExceptionType.ImplementationNotAvailable
-					, "MongoDB is not implemented!" );
+		if (connectionOpen == false) {
+			this.openConnection();
+			connectionOpen = true;
 		}
+		List<UserStories> liste = this.strategy.load();
+		this.liste = liste; // MayBe merge
 	}
 
 	/**
 	 * Method for setting the Persistence-Strategy from outside.
+	 * If a new strategy is set, then the old one is closed before (if available)
+	 * ToDo here: delegate the exception to the client in case of problems when closing the connection
+	 * (not really relevant in the context of this assignment)
+	 *
 	 * @param persistenceStrategy
 	 */
 	public void setPersistenceStrategie(PersistenceStrategy persistenceStrategy) {
-
+		if (connectionOpen == true) {
+			try {
+				this.closeConnection();
+			} catch (PersistenceException e) {
+				// ToDo here: delegate to client (next year maybe ;-))
+				e.printStackTrace();
+			}
+		}
 		this.strategy = persistenceStrategy;
 	}
 
@@ -179,20 +191,30 @@ public class Container {
 					ExceptionType.NoStrategyIsSet,
 					"Strategy not initialized");
 
+		if (connectionOpen == false) {
+			this.openConnection();
+			connectionOpen = true;
+		}
+		this.strategy.save( this.liste  );
+	}
+
+	private void openConnection() throws PersistenceException {
 		try {
-			this.strategy.save( this.liste  );
-		} catch ( UnsupportedOperationException e) {
-			throw new PersistenceException( PersistenceException.ExceptionType.ImplementationNotAvailable
-					, "MongoDB is not implemented!" );
+			this.strategy.openConnection();
+			connectionOpen = true;
+		} catch( UnsupportedOperationException e ) {
+			throw new PersistenceException(
+					PersistenceException.ExceptionType.ImplementationNotAvailable ,
+					"Not implemented!" );
 		}
 	}
 
-	/**
-	 * Methode zum Löschen aller Member-Objekte
-	 * @throws PersistenceException
-	 */
-	public void deleteAllMembers() throws PersistenceException {
-		this.liste.clear();
+	private void closeConnection() throws PersistenceException {
+		try {
+			this.strategy.closeConnection();
+			connectionOpen = false;
+		} catch( UnsupportedOperationException e ) {
+			throw new PersistenceException( PersistenceException.ExceptionType.ImplementationNotAvailable , "Not implemented!" );
+		}
 	}
-
 }
