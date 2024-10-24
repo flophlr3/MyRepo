@@ -1,53 +1,52 @@
 package org.hbrs.se1.ws24.exercises.uebung3;
 
-import java.util.List;
-
-import org.hbrs.se1.ws24.exercises.uebung2.Member.ConcreteMember;
-import org.hbrs.se1.ws24.exercises.uebung2.Container.Container;
-import org.hbrs.se1.ws24.exercises.uebung2.Exception.ContainerException;
-import org.hbrs.se1.ws24.exercises.uebung2.Member.Member;
 import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceException;
+
+import java.util.List;
 
 public class Client {
 
-    public void start() {
+    public void startClient() {
+        // Abholung der Referenz des Container-Objekts (Singleton!)
         Container container = Container.getInstance();
-        // MemberObjekt in Container hinzufügen
+
+        // Hinzufügen von Member-Objekt
         try {
-            container.addMember(new ConcreteMember(1));
-            container.addMember(new ConcreteMember(2));
-            container.addMember(new ConcreteMember(3));
-            container.addMember(new ConcreteMember(4));
+            container.addMember(new MemberKonkret(2));
         } catch (ContainerException e) {
             e.printStackTrace();
         }
 
-        // Abspeichern der Objekte
+        // Abspeichern veranlassen (Strategy muss hier nicht gesetzt werden!)
         try {
             container.store();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (PersistenceException e) {
+           e.printStackTrace();
         }
 
-        // Liste aus den Container
+        // Aktuelle Liste beziehen aus dem Container
         List<Member> liste = container.getCurrentList();
 
-        // Memberview erstellen
-        MemberView memberView = new MemberView();
-        memberView.dump(liste);
+        // MemberView erzeugen und Liste übergeben
+        MemberView view = new MemberView();
+        view.dump( liste );
 
-        // Liste Laden
+        // Liste wieder einladen
         try {
             container.load();
+            // container.store();
         } catch (PersistenceException e) {
             e.printStackTrace();
         }
 
-        // Liste wieder aus den Container
+        // Aktuelle Liste beziehen aus dem Container
         liste = container.getCurrentList();
 
-        // liste ausgeben
-        memberView = new MemberView();
-        memberView.dump(liste);
+        // MemberView erzeugen und Liste übergeben
+        view = new MemberView();
+        view.dump( liste );
+
     }
+
+
 }

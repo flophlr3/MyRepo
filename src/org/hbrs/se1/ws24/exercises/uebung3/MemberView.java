@@ -2,12 +2,13 @@ package org.hbrs.se1.ws24.exercises.uebung3;
 
 import java.util.List;
 
-import org.hbrs.se1.ws24.exercises.uebung2.Member.Member;
-
 public class MemberView {
-    public void dump(List<Member> memberList) {
-        for (Member member : memberList) {
-            System.out.println(member.toString());
+
+    public void dump( List<Member> liste ) {
+        System.out.println("Ausgabe aller Member-Objekte: ");
+        // Loesung mit For each:
+        for (Member p : liste) {
+            System.out.println("ID: " + p.toString() );
         }
     }
 }
