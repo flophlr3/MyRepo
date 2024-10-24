@@ -6,7 +6,7 @@ import java.util.List;
 public class PersistenceStrategyStream<E> implements PersistenceStrategy<E> {
 
     // URL der Datei, in der die Objekte gespeichert werden
-    private String LOCATION = "objects.ser";
+    private String LOCATION = "/Users/florianpaehler/Library/CloudStorage/OneDrive-HochschuleBonn-Rhein-Sieg/HBRS/sem 5/SE1/codesSEws24/src/org/hbrs/se1/ws24/exercises/uebung3/objects.ser";
 
     private ObjectOutputStream oos = null;
     private FileOutputStream fos = null;
