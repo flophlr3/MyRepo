@@ -29,7 +29,7 @@ public class main {
             if (befehl.equals("enter")) {
                 try {
                     enter(container);
-                } catch (PersistenceException e) {
+                } catch (PersistenceException | org.hbrs.se1.ws24.exercises.uebung3.ContainerException e) {
                     throw new PersistenceException(PersistenceException.ExceptionType.ImplementationNotAvailable, "");
                 }
 

@@ -26,6 +26,6 @@ public class PersistenceException extends Exception {
         NoStrategyIsSet,
         SaveFailure,
         LoadFailure,
-        ClosingFailure
+        InputMissmatch, ClosingFailure
     }
 }
