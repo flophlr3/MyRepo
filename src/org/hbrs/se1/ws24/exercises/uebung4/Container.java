@@ -142,22 +142,23 @@ public class Container {
 	}
 
 
-	/**
-	 * Method for loading objects. Uses the internally stored strategy object
-	 * @throws PersistenceException
-	 */
 	public void load() throws PersistenceException {
 		if (this.strategy == null)
-			throw new PersistenceException( PersistenceException.ExceptionType.NoStrategyIsSet,
+			throw new PersistenceException(
+					PersistenceException.ExceptionType.NoStrategyIsSet,
 					"Strategy not initialized");
 
-		if (connectionOpen == false) {
-			this.openConnection();
-			connectionOpen = true;
+		try {
+			List<UserStories> liste = this.strategy.load();
+			this.liste = liste;
+		} catch ( java.lang.UnsupportedOperationException e) {
+			throw new PersistenceException(
+					PersistenceException.ExceptionType.ImplementationNotAvailable
+					, "MongoDB is not implemented!" );
 		}
-		List<UserStories> liste = this.strategy.load();
-		this.liste = liste; // MayBe merge
 	}
+
+
 
 	/**
 	 * Method for setting the Persistence-Strategy from outside.
@@ -168,17 +169,9 @@ public class Container {
 	 * @param persistenceStrategy
 	 */
 	public void setPersistenceStrategie(PersistenceStrategy persistenceStrategy) {
-		if (connectionOpen == true) {
-			try {
-				this.closeConnection();
-			} catch (PersistenceException e) {
-				// ToDo here: delegate to client (next year maybe ;-))
-				e.printStackTrace();
-			}
-		}
+
 		this.strategy = persistenceStrategy;
 	}
-
 
 	/**
 	 * Method for storing objects. Uses the internally stored strategy object
@@ -190,11 +183,15 @@ public class Container {
 					ExceptionType.NoStrategyIsSet,
 					"Strategy not initialized");
 
-		if (connectionOpen == false) {
-			this.openConnection();
-			connectionOpen = true;
+		try {
+			this.strategy.save( this.liste  );
+		} catch ( java.lang.UnsupportedOperationException e) {
+			throw new PersistenceException( PersistenceException.ExceptionType.ImplementationNotAvailable
+					, "MongoDB is not implemented!" );
 		}
-		this.strategy.save( this.liste  );
+	}
+	public void deleteAllMembers() throws PersistenceException {
+		this.liste.clear();
 	}
 
 }
