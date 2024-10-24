@@ -1,7 +1,6 @@
 package org.hbrs.se1.ws24.exercises.uebung4;
 
 import org.hbrs.se1.ws24.exercises.uebung3.ContainerException;
-import org.hbrs.se1.ws24.exercises.uebung3.Member;
 import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceException;
 import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceStrategy;
 
@@ -198,23 +197,4 @@ public class Container {
 		this.strategy.save( this.liste  );
 	}
 
-	private void openConnection() throws PersistenceException {
-		try {
-			this.strategy.openConnection();
-			connectionOpen = true;
-		} catch( UnsupportedOperationException e ) {
-			throw new PersistenceException(
-					PersistenceException.ExceptionType.ImplementationNotAvailable ,
-					"Not implemented!" );
-		}
-	}
-
-	private void closeConnection() throws PersistenceException {
-		try {
-			this.strategy.closeConnection();
-			connectionOpen = false;
-		} catch( UnsupportedOperationException e ) {
-			throw new PersistenceException( PersistenceException.ExceptionType.ImplementationNotAvailable , "Not implemented!" );
-		}
-	}
 }

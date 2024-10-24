@@ -87,8 +87,7 @@ public class main {
         sc.close();
 
     }
-    public static void enter(Container con) throws PersistenceException, ContainerException
-    {
+    public static void enter(Container con) throws PersistenceException, ContainerException, org.hbrs.se1.ws24.exercises.uebung3.ContainerException {
         System.out.println("Gib deine Beschreibung ein. Wenn du fertig bist schreibe am ende ENDE");
         Scanner sc1 = new Scanner(System.in);
         // String beschreibung = sc1.nextLine();
