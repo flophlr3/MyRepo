@@ -10,7 +10,6 @@ import java.util.stream.Stream;
 
 public class main {
 
-    public static final String GREEN = "\033[0;32m";
     public static void main(String[] args) throws ContainerException, PersistenceException {
         // Referenz auf das Container-Objekt holen
         Container container = Container.getInstance();
