@@ -21,7 +21,7 @@ public class Container {
 	private List<UserStories> liste = null;
 
 	//Statische Klassen-Variable, um die Referenz
-	//auf das einzige Container-Objekt abzuspeichern
+	//auf das einzige  Container-Objekt abzuspeichern
 	// Dynamische Belegung: nur falls Methode getInstance geladen
 	// wird, dann wird nach Bedarf die Variable mit einer Referenz gefüllt
 	private static Container instance = null; // = new Container();
