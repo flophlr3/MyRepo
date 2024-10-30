@@ -27,7 +27,7 @@ public class Container {
 	private static Container instance = null; // = new Container();
 
 	// Reference to the internal strategy (e.g. MongoDB or Stream)
-	private PersistenceStrategy strategy = null;
+	private PersistenceStrategyStream strategy = null;
 
 	// Flag to see, if a connection is opened
 	private boolean connectionOpen = false;
@@ -168,7 +168,7 @@ public class Container {
 	 *
 	 * @param persistenceStrategy
 	 */
-	public void setPersistenceStrategie(PersistenceStrategy persistenceStrategy) {
+	public void setPersistenceStrategie(PersistenceStrategyStream persistenceStrategy) {
 
 		this.strategy = persistenceStrategy;
 	}

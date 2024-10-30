@@ -2,7 +2,7 @@ package org.hbrs.se1.ws24.exercises.uebung4;
 
 import org.hbrs.se1.ws24.exercises.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceException;
-import org.hbrs.se1.ws24.exercises.uebung3.persistence.PersistenceStrategyStream;
+import org.hbrs.se1.ws24.exercises.uebung4.PersistenceStrategyStream;
 
 import java.util.List;
 import java.util.Scanner;
