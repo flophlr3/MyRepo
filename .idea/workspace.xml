@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11b931b2-f8a2-4546-af99-1df1f0f211cc" name="Changes" comment="4 feritg">
+      <change afterPath="$PROJECT_DIR$/allStories.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung4/UserStoryContainerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +52,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung2/test/ueb2Test.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung4/Container.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/org/hbrs/se1/ws24/exercises/uebung4/Container.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -63,35 +65,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.org.hbrs.se1.ws24.exercises.uebung2.test in SE_1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ueb2Test.addMembers.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ueb2Test.deleteMembers.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ueb2Test.doppeltHinzufuegen.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ueb2Test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ueb2Test.nullTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/florianpaehler/Library/CloudStorage/OneDrive-HochschuleBonn-Rhein-Sieg/HBRS/sem 5/SE1/codesSEws24/src/org/hbrs/se1/ws24/exercises&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Container.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ContainerTest.addTwoUserStories.executor": "Run",
+    "JUnit.ContainerTest.executor": "Run",
+    "JUnit.org.hbrs.se1.ws24.exercises.uebung2.test in SE_1.executor": "Run",
+    "JUnit.ueb2Test.addMembers.executor": "Run",
+    "JUnit.ueb2Test.deleteMembers.executor": "Run",
+    "JUnit.ueb2Test.doppeltHinzufuegen.executor": "Run",
+    "JUnit.ueb2Test.executor": "Run",
+    "JUnit.ueb2Test.nullTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/florianpaehler/Library/CloudStorage/OneDrive-HochschuleBonn-Rhein-Sieg/HBRS/sem 5/SE1/codesSEws24/src/org/hbrs/se1/ws24/exercises",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.hbrs.se1.ws24.exercises.uebung2.test" />
@@ -105,7 +111,20 @@
       <recent name="org.hbrs.se1.ws24.exercises.uebung4" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ContainerTest">
+    <configuration name="Container" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung4.prototype.Container" />
+      <module name="SE_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung4.prototype.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung3.Main" />
       <module name="SE_1" />
@@ -119,64 +138,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ueb2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung4.main" />
       <module name="SE_1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung2.test.*" />
+          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
-      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test.ueb2Test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SE_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung4" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung4.ContainerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ueb2Test.addMembers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContainerTest.addTwoUserStories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SE_1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung2.test.*" />
+          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
-      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test.ueb2Test" />
-      <option name="METHOD_NAME" value="addMembers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ueb2Test.doppeltHinzufuegen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SE_1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung2.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
-      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test.ueb2Test" />
-      <option name="METHOD_NAME" value="doppeltHinzufuegen" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ueb2Test.nullTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SE_1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hbrs.se1.ws24.exercises.uebung2.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test" />
-      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung2.test.ueb2Test" />
-      <option name="METHOD_NAME" value="nullTest" />
+      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws24.exercises.uebung4" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws24.exercises.uebung4.ContainerTest" />
+      <option name="METHOD_NAME" value="addTwoUserStories" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContainerTest" />
+        <item itemvalue="JUnit.ContainerTest.addTwoUserStories" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.Container" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ueb2Test.doppeltHinzufuegen" />
-        <item itemvalue="JUnit.ueb2Test" />
-        <item itemvalue="JUnit.ueb2Test.addMembers" />
-        <item itemvalue="JUnit.ueb2Test.nullTest" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +221,7 @@
       <workItem from="1729780911590" duration="3021000" />
       <workItem from="1730053955701" duration="2294000" />
       <workItem from="1730395791954" duration="594000" />
-      <workItem from="1730794844410" duration="4828000" />
+      <workItem from="1730794844410" duration="12419000" />
     </task>
     <task id="LOCAL-00001" summary="comm">
       <option name="closed" value="true" />
@@ -535,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730296012510</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="4 feritg">
+      <option name="closed" value="true" />
+      <created>1730896596549</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1730896596549</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
